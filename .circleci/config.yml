@@ -9,11 +9,11 @@ jobs:
       - checkout
 
       - run:
-          name: Test
+          name: Run Tests
           command: echo "Running tests..."
 
       - run:
-          name: Build
+          name: Build Application
           command: echo "Building application..."
 
 workflows:
