@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sms-deployment
+  namespace: sms-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: studentmarkservice
+  template:
+    metadata:
+      labels:
+        app: studentmarkservice
+    spec:
+      containers:
+        - name: sms-container
+          image: studentmarkservice:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9900
